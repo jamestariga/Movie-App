@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { getTrendingMovies } from '../../api/movieApi'
 import SideNavigation from '../../components/SideNavigation/'
+import Card from '../../components/Card/'
 
 const Home = () => {
   const { data, error, isLoading } = useQuery(['trending'], getTrendingMovies)
@@ -21,7 +22,7 @@ const Home = () => {
           <div className='flex flex-col justify-start w-full gap-4 pt-10'>
             {data?.map((movie) => (
               <div key={movie.id}>
-                <h2 className='text-xl '>{movie?.title}</h2>
+                <Card {...movie} />
               </div>
             ))}
           </div>
