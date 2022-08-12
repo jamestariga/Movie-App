@@ -27,7 +27,7 @@ const NavBar = () => {
     <>
       <nav
         className={`navbar py-6 fixed transition ${
-          isScrolled ? `bg-blue-600` : `bg-base-100`
+          isScrolled ? `bg-indigo-900` : `bg-base-100`
         }`}
       >
         <div className='navbar-start'>
@@ -93,7 +93,7 @@ const NavBar = () => {
                 TV Shows
                 <FaChevronDown
                   className={`h-4 w-4 ${
-                    isScrolled ? `text-blue-800` : `text-blue-500`
+                    isScrolled ? `text-blue-400` : `text-blue-600`
                   }`}
                 />
               </NavLink>
