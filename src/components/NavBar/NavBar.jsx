@@ -10,7 +10,7 @@ const NavBar = () => {
     const handleScroll = () => {
       if (window.innerWidth > 1020) {
         // if user scrolls more than 40px
-        if (window.scrollY > 40) {
+        if (window.scrollY > 20) {
           setIsScrolled(true)
         } else {
           setIsScrolled(false)
@@ -26,7 +26,7 @@ const NavBar = () => {
   return (
     <>
       <nav
-        className={`navbar py-6 fixed transition ${
+        className={`navbar py-6 fixed transition z-50 ${
           isScrolled ? `bg-indigo-900` : `bg-base-100`
         }`}
       >
