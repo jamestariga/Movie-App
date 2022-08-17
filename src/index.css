@@ -12,3 +12,43 @@ body {
 header {
   padding-top: 8rem;
 }
+
+@media screen and (min-width: 1024px) {
+  header {
+    padding-left: 16rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #147aff;
+  border: 6px none #ffffff;
+  border-radius: 44px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #147aff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #147aff;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 43px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-track:active {
+  background: #ffffff;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
