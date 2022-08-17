@@ -23,8 +23,8 @@ const FeaturedCard = (props) => {
           )}
         </div>
         <div className='flex flex-col w-4/6 2xl:w-3/5 4xl:w-9/12 space-y-6'>
-          <h1 className='text-xl text-gray-300 font-extrabold'>{title}</h1>
-          <h1 className='text-sm text-gray-300 text-left'>{overview}</h1>
+          <h1 className='text-xl text-gray-100 font-extrabold'>{title}</h1>
+          <h1 className='text-sm text-gray-100 text-left'>{overview}</h1>
         </div>
       </div>
     </>
