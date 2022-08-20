@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { getTrendingMovies } from '../../api/movieApi'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
-import SideNavigation from '../../components/SideNavigation/'
 import FeaturedCard from '../../components/FeaturedCard'
 import Upcoming from '../../components/Upcoming'
+import TopRated from '../../components/TopRated'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import { Carousel } from 'react-responsive-carousel'
 
@@ -74,17 +74,9 @@ const Home = () => {
 
   return (
     <>
-      <div className='hidden lg:flex items-center flex-col w-auto pt-36 fixed'>
-        <div className='flex w-1/2'>
-          <h1 className='text-xl text-gray-400'>Menu</h1>
-        </div>
-        <div className='px-10'>
-          <SideNavigation />
-        </div>
-      </div>
       <header className='flex flex-wrap lg:space-x-10'>
         <div className='flex grow flex-col lg:justify-start lg:items-start justify-center items-center w-full xl:w-full 2xl:w-7/12 px-6 lg:px-10 pb-10'>
-          <h1 className='text-3xl text-white font-bold'>Trending Movie🔥</h1>
+          <h1 className='text-3xl text-white font-bold'>Trending Movies🔥</h1>
           <div className='flex flex-col justify-start w-full gap-4 pt-10'>
             <Carousel {...carouselOptions()}>
               {data?.map((movie) => (
@@ -93,6 +85,12 @@ const Home = () => {
                 </div>
               ))}
             </Carousel>
+          </div>
+          <h1 className='text-3xl text-white font-bold pt-10'>
+            Top Rated Movies ⭐
+          </h1>
+          <div className='flex flex-col pt-4'>
+            <TopRated />
           </div>
         </div>
         <div className='flex lg:justify-start lg:items-start justify-center items-center flex-col w-full 2xl:w-4/12 2xl:pr-10'>
