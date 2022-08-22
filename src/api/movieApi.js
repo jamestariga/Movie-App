@@ -45,3 +45,18 @@ export const getTopRatedMovies = async () => {
 
   return topRatedMovies
 }
+
+export const getNowPlayingMovies = async () => {
+  const response = await movieApi.get(
+    `/movie/now_playing?api_key=${VITE_APP_TMDB_KEY}&language=en-US`
+  )
+
+  const nowPlayingMovies = response.data.results.slice(
+    0,
+    response.data.results.length / 4
+  )
+
+  console.log(nowPlayingMovies)
+
+  return nowPlayingMovies
+}
