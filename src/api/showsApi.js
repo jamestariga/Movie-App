@@ -1,14 +1,14 @@
 import axios from 'axios'
 
 const movieApi = axios.create({
-  baseURL: 'https://api.themoviedb.org/3/',
+  baseURL: 'https://api.themoviedb.org/3/tv',
 })
 
 const { VITE_APP_TMDB_KEY } = import.meta.env
 
 export const getPopularShows = async () => {
   const response = await movieApi.get(
-    `/shows/popular?api_key=${VITE_APP_TMDB_KEY}&language=en-US`
+    `/popular?api_key=${VITE_APP_TMDB_KEY}&language=en-US`
   )
 
   console.log(response.data.results)
@@ -18,7 +18,7 @@ export const getPopularShows = async () => {
 
 export const getTopRatedShows = async () => {
   const response = await movieApi.get(
-    `/shows/top_rated?api_key=${VITE_APP_TMDB_KEY}&language=en-US`
+    `/top_rated?api_key=${VITE_APP_TMDB_KEY}&language=en-US`
   )
 
   console.log(response.data.results)
@@ -28,7 +28,7 @@ export const getTopRatedShows = async () => {
 
 export const getCurrentShows = async () => {
   const response = await movieApi.get(
-    `/shows/on_the_air?api_key=${VITE_APP_TMDB_KEY}&language=en-US`
+    `/on_the_air?api_key=${VITE_APP_TMDB_KEY}&language=en-US`
   )
 
   console.log(response.data.results)
@@ -38,7 +38,7 @@ export const getCurrentShows = async () => {
 
 export const getAiringTodayShows = async () => {
   const response = await movieApi.get(
-    `/shows/airing_today?api_key=${VITE_APP_TMDB_KEY}&language=en-US`
+    `/airing_today?api_key=${VITE_APP_TMDB_KEY}&language=en-US`
   )
 
   console.log(response.data.results)
