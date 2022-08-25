@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import useScroll from '../../hooks/useScroll/useScroll'
+import useEventListener from '../../hooks/useEventListener'
 import { BiHomeCircle } from 'react-icons/bi'
 import { AiOutlineCompass, AiOutlineCloud } from 'react-icons/ai'
 import { BsPeople } from 'react-icons/bs'
@@ -20,7 +20,7 @@ const SideNavigation = () => {
     }
   }
 
-  useScroll('scroll', handleScroll)
+  useEventListener('scroll', handleScroll)
 
   return (
     <>
