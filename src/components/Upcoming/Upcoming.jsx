@@ -1,9 +1,9 @@
 import { useQuery } from '@tanstack/react-query'
-import { getUpcomingMovies } from '../../api/movieApi'
 import UpcomingCard from '../../components/UpcomingCard'
 
-const Upcoming = () => {
-  const { data, error, isLoading } = useQuery(['upcoming'], getUpcomingMovies)
+const Upcoming = (props) => {
+  const { fetchData, dataName } = props
+  const { data, error, isLoading } = useQuery([dataName], fetchData)
 
   return (
     <>
