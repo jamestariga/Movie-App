@@ -40,7 +40,9 @@ const FeaturedCard = (props) => {
           <h1 className='text-xl text-gray-100 font-extrabold'>
             {title || name}
           </h1>
-          <h1 className='text-sm text-gray-100 text-left'>{overview}</h1>
+          <div className='max-h-40 overflow-hidden'>
+            <p className='text-gray-100 text-left'>{overview}</p>
+          </div>
           <div className='flex flex-wrap gap-4'>{displayGenre()}</div>
         </div>
       </div>
