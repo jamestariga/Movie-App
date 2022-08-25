@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import useEventListener from '../../hooks/useEventListener'
 import { FaChevronDown, FaChevronRight } from 'react-icons/fa'
 import { HiOutlineMenuAlt1 } from 'react-icons/hi'
 import { NavLink } from 'react-router-dom'
@@ -6,22 +7,17 @@ import { NavLink } from 'react-router-dom'
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerWidth > 1020) {
-        // if user scrolls more than 40px
-        if (window.scrollY > 20) {
-          setIsScrolled(true)
-        } else {
-          setIsScrolled(false)
-        }
+  const handleScroll = () => {
+    if (window.innerWidth > 1020) {
+      if (window.scrollY > 20) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
       }
     }
+  }
 
-    window.addEventListener('scroll', handleScroll)
-
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  useEventListener('scroll', handleScroll)
 
   return (
     <>
