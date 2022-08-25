@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
 import Home from './pages/Home/'
 import Shows from './pages/Shows/'
+import Error from './pages/Error/'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
               <Route path='/' element={<Home />} />
               <Route path='/shows' element={<Shows />} />
             </Route>
+            <Route path='/*' element={<Error />} />
           </Routes>
         </Router>
       </QueryClientProvider>
