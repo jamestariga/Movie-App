@@ -21,14 +21,17 @@ export const getTopRatedShows = async () => {
     `/top_rated?api_key=${VITE_APP_TMDB_KEY}&language=en-US`
   )
 
-  console.log(response.data.results)
+  const topRatedShows = response.data.results.slice(
+    0,
+    response.data.results.length / 4
+  )
 
-  return response.data.results
+  return topRatedShows
 }
 
 export const getCurrentShows = async () => {
   const response = await movieApi.get(
-    `/on_the_air?api_key=${VITE_APP_TMDB_KEY}&language=en-US`
+    `/on_the_air?api_key=${VITE_APP_TMDB_KEY}&language=en-US&page=2`
   )
 
   console.log(response.data.results)
