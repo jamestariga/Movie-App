@@ -54,7 +54,7 @@ const Carousel = (props) => {
     <>
       <Carousels {...carouselOptions()}>
         {data?.map((movie) => (
-          <div key={movie.id} className='pr-8'>
+          <div key={movie.id}>
             <FeaturedCard {...movie} />
           </div>
         ))}
