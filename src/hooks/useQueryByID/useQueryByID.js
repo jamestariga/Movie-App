@@ -1,8 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
-import { getMovieByID } from '../../api/movieApi'
 
-const useQueryByID = (id) => {
-  return useQuery(['movie', id], () => getMovieByID(id), {
+const useQueryByID = (query, id, callback) => {
+  return useQuery([query, id], () => callback(id), {
     enabled: !!id,
   })
 }
