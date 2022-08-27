@@ -55,3 +55,27 @@ export const getNowPlayingMovies = async () => {
 
   return response.data.results
 }
+
+export const getCastByID = async (id) => {
+  if (id === null) return
+
+  const response = await movieApi.get(
+    `/movie/${id}/credits?api_key=${VITE_APP_TMDB_KEY}&language=en-US`
+  )
+
+  const casts = response.data.cast.slice(0, response.data.cast.length / 5)
+
+  console.log(casts)
+
+  return casts
+}
+
+export const getMovieByID = async (id) => {
+  const response = await movieApi.get(
+    `/movie/${id}?api_key=${VITE_APP_TMDB_KEY}&language=en-US`
+  )
+
+  console.log(response.data)
+
+  return response.data
+}
