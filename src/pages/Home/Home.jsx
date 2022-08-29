@@ -40,13 +40,18 @@ const Home = () => {
               isNeeded={true}
               dataName='trendingMovies'
               fetchData={getTrendingMovies}
+              media='Movie'
             />
           </div>
           <h1 className='text-3xl text-white font-bold pt-10'>
             Top Rated Movies ⭐
           </h1>
           <div className='flex flex-col justify-start w-full pt-10'>
-            <TopRated dataName='topRatedMovies' fetchData={getTopRatedMovies} />
+            <TopRated
+              dataName='topRatedMovies'
+              fetchData={getTopRatedMovies}
+              media='Movie'
+            />
           </div>
           <h1 className='text-3xl text-white font-bold pt-10'>
             Now Playing 🎬
@@ -57,6 +62,7 @@ const Home = () => {
               isNeeded={false}
               dataName='nowPlayingMovies'
               fetchData={getNowPlayingMovies}
+              media='Movie'
             />
           </div>
           <h1 className='text-3xl text-white font-bold pt-10'>
@@ -68,13 +74,18 @@ const Home = () => {
               isNeeded={false}
               dataName='trendingShows'
               fetchData={getPopularShows}
+              media='Show'
             />
           </div>
           <h1 className='text-3xl text-white font-bold pt-10'>
             Top Shows Today 🍿
           </h1>
           <div className='flex flex-col justify-start w-full pt-10'>
-            <TopRated dataName='topRatedShows' fetchData={getTopRatedShows} />
+            <TopRated
+              dataName='topRatedShows'
+              fetchData={getTopRatedShows}
+              media='Show'
+            />
           </div>
           <h1 className='text-3xl text-white font-bold pt-10'>
             Airing Shows Today 🍿
@@ -85,6 +96,7 @@ const Home = () => {
               isNeeded={false}
               dataName='airingTodayShows'
               fetchData={getAiringTodayShows}
+              media='Show'
             />
           </div>
           <h1 className='text-3xl text-white font-bold pt-10'>
@@ -96,6 +108,7 @@ const Home = () => {
               isNeeded={false}
               dataName='currentShows'
               fetchData={getCurrentShows}
+              media='Show'
             />
           </div>
         </div>
