@@ -4,6 +4,7 @@ import Home from './pages/Home/'
 import Shows from './pages/Shows/'
 import Error from './pages/Error/'
 import ID from './pages/ID/'
+import ShowsID from './pages/ShowsID'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const App = () => {
@@ -23,7 +24,8 @@ const App = () => {
             <Route path='/' element={<Layout />}>
               <Route path='/' element={<Home />} />
               <Route path='/shows' element={<Shows />} />
-              <Route path='/:id' element={<ID />} />
+              <Route path='/Movie/:id' element={<ID />} />
+              <Route path='/Show/:id' element={<ShowsID />} />
             </Route>
             <Route path='/*' element={<Error />} />
           </Routes>
