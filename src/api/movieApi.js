@@ -56,14 +56,20 @@ export const getNowPlayingMovies = async () => {
   return response.data.results
 }
 
-export const getCastByID = async (id) => {
+export const getMovieCastByID = async (id) => {
   if (id === null) return
 
   const response = await movieApi.get(
     `/movie/${id}/credits?api_key=${VITE_APP_TMDB_KEY}&language=en-US`
   )
 
-  const casts = response.data.cast.slice(0, response.data.cast.length / 5)
+  // Reduce the number of casts to a maximum of 10
+  const casts = response.data.cast.reduce((acc, curr) => {
+    if (acc.length < 12) {
+      acc.push(curr)
+    }
+    return acc
+  }, [])
 
   console.log(casts)
 
