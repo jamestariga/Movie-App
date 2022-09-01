@@ -5,7 +5,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { Carousel as Carousels } from 'react-responsive-carousel'
 
 const Carousel = (props) => {
-  const { fetchData, isVisible, isNeeded, dataName } = props
+  const { fetchData, isVisible, isNeeded, dataName, media } = props
 
   const { data, error, isLoading } = useQuery([dataName], fetchData)
 
@@ -55,7 +55,7 @@ const Carousel = (props) => {
       <Carousels {...carouselOptions()}>
         {data?.map((movie) => (
           <div key={movie.id}>
-            <FeaturedCard {...movie} />
+            <FeaturedCard {...movie} media={media} />
           </div>
         ))}
       </Carousels>
