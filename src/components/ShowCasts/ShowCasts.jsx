@@ -10,7 +10,7 @@ const ShowCasts = ({ id }) => {
   )
 
   return (
-    <div className='grid grid-cols-4 auto-rows-[1fr]'>
+    <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6 auto-rows-[1fr]'>
       {data?.map((cast) => (
         <div key={cast.id}>
           <CastsCard {...cast} />
