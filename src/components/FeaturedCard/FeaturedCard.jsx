@@ -2,8 +2,16 @@ import GenreID from '../../utils/GenreID'
 import { Link } from 'react-router-dom'
 
 const FeaturedCard = (props) => {
-  const { title, name, overview, backdrop_path, poster_path, genre_ids, id } =
-    props
+  const {
+    title,
+    name,
+    overview,
+    backdrop_path,
+    poster_path,
+    genre_ids,
+    id,
+    media,
+  } = props
 
   const poster = `https://image.tmdb.org/t/p/original${poster_path}`
   const backdrop = `https://image.tmdb.org/t/p/original${backdrop_path}`
@@ -24,7 +32,7 @@ const FeaturedCard = (props) => {
 
   return (
     <>
-      <Link to={`/${id}`}>
+      <Link to={`/${media}/${id}`}>
         <div className='pr-8'>
           <div
             className='flex justify-start space-x-10 lg:w-auto w-full min-h-[5rem] h-[20rem] rounded-xl shadow-lg md:py-6 md:px-10 py-2 px-6 overflow-hidden cursor-pointer'
