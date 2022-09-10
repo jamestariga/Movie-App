@@ -1,5 +1,3 @@
-import React from 'react'
-
 const UpcomingCard = (props) => {
   const { title, overview, backdrop_path, poster_path } = props
 
