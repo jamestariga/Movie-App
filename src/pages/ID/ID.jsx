@@ -23,8 +23,6 @@ const ID = () => {
     return genre
   }
 
-  displayGenre()
-
   return (
     <>
       <header className='flex flex-col space-y-8'>
