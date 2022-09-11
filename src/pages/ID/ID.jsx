@@ -37,7 +37,10 @@ const ID = () => {
           <div className='flex flex-wrap gap-4'>{displayGenre()}</div>
           <p className='text-lg text-white'>{data?.overview}</p>
         </div>
-        <Casts id={id} />
+        <div className='px-8'>
+          <h1 className='text-2xl font-bold text-white'>Casts:</h1>
+          <Casts id={id} />
+        </div>
       </header>
     </>
   )
