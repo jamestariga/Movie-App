@@ -7,7 +7,7 @@ const CastsCard = (props) => {
   return (
     <>
       <Link to={`/person/${props.id}`}>
-        <div className='flex flex-col items-center p-4'>
+        <div className='flex flex-col items-center p-4 space-y-4 lg:space-y-0'>
           <div className='w-full lg:p-6 xl:p-8 rounded-2xl overflow-hidden hover:scale-[1.1] transition'>
             <img
               src={
@@ -19,7 +19,7 @@ const CastsCard = (props) => {
               className='max-h-[14rem] w-full rounded-2xl'
             />
           </div>
-          <h2>
+          <h2 className='text-sm sm:text-base'>
             <strong> {name} </strong> as {character}
           </h2>
         </div>
