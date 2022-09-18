@@ -1,5 +1,6 @@
 import Navbar from '../Navbar/Navbar'
 import SideNavigation from '../SideNavigation/SideNavigation'
+import Footer from '../Footer/'
 import { Outlet } from 'react-router-dom'
 
 const Layout = () => {
@@ -8,6 +9,7 @@ const Layout = () => {
       <Navbar />
       <SideNavigation />
       <Outlet />
+      <Footer />
     </>
   )
 }
