@@ -28,7 +28,7 @@ export const getAllMoviesByPersonID = async (id) => {
   const topAppearances = response.data.cast
     .filter((movie) => movie.popularity > 50)
     .reduce((acc, curr) => {
-      if (acc.length < 10) {
+      if (acc.length < 12) {
         acc.push(curr)
       }
       return acc
