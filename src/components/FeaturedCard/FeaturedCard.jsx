@@ -21,7 +21,12 @@ const FeaturedCard = (props) => {
       GenreID.find((g) => g.value === genre)
     )
 
-    return genre.map((g) => (
+    const removeDuplicate = genre.filter(
+      (genre, index, self) =>
+        index === self.findIndex((t) => t.label === genre.label)
+    )
+
+    return removeDuplicate.map((g) => (
       <div key={g.value}>
         <div className='flex bg-blurred p-2'>
           <h1 className='text-white text-sm'>{g.title}</h1>
