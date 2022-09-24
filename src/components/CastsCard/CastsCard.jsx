@@ -1,5 +1,6 @@
-import Unknown from '../../../public/image/unknown.png'
 import { Link } from 'react-router-dom'
+
+const unknown = new URL('/image/unknown.jpg', import.meta.url)
 
 const CastsCard = (props) => {
   const { name, character, profile_path } = props
@@ -13,7 +14,7 @@ const CastsCard = (props) => {
               src={
                 profile_path !== null
                   ? `https://image.tmdb.org/t/p/original${profile_path}`
-                  : Unknown
+                  : unknown
               }
               alt={name}
               className='max-h-[18rem] w-full rounded-2xl'
