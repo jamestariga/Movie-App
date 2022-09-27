@@ -1,15 +1,16 @@
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useIsFetching } from '@tanstack/react-query'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import FeaturedCard from '../FeaturedCard'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { Carousel as Carousels } from 'react-responsive-carousel'
+import { FeaturedCardSkeleton } from '../CardSkeleton/CardSkeleton'
 
 const Carousel = (props) => {
   const { fetchData, isVisible, isNeeded, dataName, media } = props
 
   const { data, error, isLoading } = useQuery([dataName], fetchData)
 
-  if (isLoading) return <div>Loading...</div>
+  const isFetching = useIsFetching()
 
   const carouselOptions = () => {
     return {
@@ -53,11 +54,15 @@ const Carousel = (props) => {
   return (
     <>
       <Carousels {...carouselOptions()}>
-        {data?.map((movie) => (
-          <div key={movie.id}>
-            <FeaturedCard {...movie} media={media} />
-          </div>
-        ))}
+        {data?.map((movie) =>
+          isFetching ? (
+            <FeaturedCardSkeleton key={movie.id} card={movie} />
+          ) : (
+            <div key={movie.id}>
+              <FeaturedCard {...movie} media={media} />
+            </div>
+          )
+        )}
       </Carousels>
     </>
   )
