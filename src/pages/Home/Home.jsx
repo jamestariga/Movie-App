@@ -115,7 +115,11 @@ const Home = () => {
         <div className='flex lg:justify-start lg:items-start justify-center items-center flex-col w-full 2xl:w-4/12 2xl:pr-10'>
           <h1 className='text-3xl text-white font-bold'>Upcoming Movies 🍿</h1>
           <div className='pt-10'>
-            <Upcoming fetchData={getUpcomingMovies} dataName='upcomingMovies' />
+            <Upcoming
+              fetchData={getUpcomingMovies}
+              dataName='upcomingMovies'
+              media='Movie'
+            />
           </div>
         </div>
       </header>
