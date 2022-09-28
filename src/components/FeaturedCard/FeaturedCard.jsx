@@ -40,7 +40,7 @@ const FeaturedCard = (props) => {
       <Link to={`/${media}/${id}`}>
         <div className='pr-8'>
           <div
-            className='flex justify-start space-x-10 lg:w-auto w-full min-h-[5rem] h-[20rem] rounded-xl shadow-lg md:py-6 md:px-10 py-2 px-6 overflow-hidden cursor-pointer'
+            className='flex justify-start space-x-10 lg:w-auto w-full min-h-[5rem] h-[20rem] 4xl:h-[25rem] rounded-xl shadow-lg md:py-6 md:px-10 py-2 px-6 overflow-hidden cursor-pointer'
             style={{
               backgroundImage: `url(${
                 backdrop_path === null ? poster : backdrop
