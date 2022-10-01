@@ -72,6 +72,7 @@ const NavBar = () => {
                 className={({ isActive }) =>
                   isActive ? `bg-blue-700 text-white` : `text-gray-400`
                 }
+                end
               >
                 Home
               </NavLink>
