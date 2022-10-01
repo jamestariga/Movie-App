@@ -7,7 +7,7 @@ export const FeaturedCardSkeleton = ({ cards }) => {
         .fill(0)
         .map((_, i) => (
           <div className='pr-8' key={i}>
-            <div className='flex justify-start space-x-10 lg:w-auto w-full min-h-[5rem] h-[20rem] rounded-xl md:py-6 md:px-10 py-2 px-6 overflow-hidden cursor-pointer shadow-xl'>
+            <div className='flex justify-start space-x-10 lg:w-auto w-full min-h-[5rem] h-[20rem] 4xl:h-[25rem] rounded-xl md:py-6 md:px-10 py-2 px-6 overflow-hidden cursor-pointer shadow-xl'>
               <div className='hidden sm:flex max-w-xs w-2/5 2xl:2/5 4xl:w-3/12 shadow-xl rounded-3xl overflow-hidden'>
                 <Skeleton height={400} width={400} />
               </div>
